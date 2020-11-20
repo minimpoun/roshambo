@@ -13,11 +13,14 @@ class Game
         console.log("Playing a game of Roshambo against the computer!");
         console.log(`${playerOne.name} played ${playerOne.getMove().name}`);
         console.log(`${playerTwo.name} played ${playerTwo.getMove().name}`);
+
+        console.log(`And the winner is: ${this._checkWinner(playerOne, playerTwo)}`);
     }
 
-    _checkWinner(playerOneMove, playerTwoMove)
+    _checkWinner(playerOne, playerTwo)
     {
-        
+        if (playerOne.getMove().name === playerTwo.getMove().name) return "No one";
+        return playerOne.getMove().beats[0] === playerTwo.getMove().name ? playerOne.name : playerTwo.name;
     }
 }
 

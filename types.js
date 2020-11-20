@@ -2,14 +2,19 @@ class MoveSet
 {
     constructor(beats, name)
     {
-        this.validMoves = ['rock', 'paper', 'scissors'];
+        this.validMoves = [0, 1, 2, 'rock', 'paper', 'scissors'];
         this.beats = beats;
         this.name = name;
     }
 
-    get beats()
+    get getBeats()
     {
         return beats;
+    }
+
+    set setBeats(val)
+    {
+        this.beats = val;
     }
 }
 

@@ -7,7 +7,7 @@ class Controller
         this.name = name;
     }
 
-    get getMove()
+    getMove()
     {
         return undefined;
     }
@@ -21,9 +21,9 @@ class PlayerController extends Controller
         this.move = move;
     }
 
-    get getMove()
+    getMove()
     {
-        return MoveManager.getMoveFromInput(this.move.toLowerCase());
+        return MoveManager.getMoveFromInput(this.move);
     }
 }
 
@@ -32,11 +32,12 @@ class AIController extends Controller
     constructor()
     {
         super('Computer');
+        this.move = MoveManager.getRandomMove()
     }
 
-    get getMove()
+    getMove()
     {
-        return Types.MoveManager.getRandomMove();
+        return this.move;
     }
 }
 
