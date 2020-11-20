@@ -54,6 +54,11 @@ class MoveManager
             case 'rock': return new RockMoveSet();
             case 'paper': return new PaperMoveSet();
             case 'scissors': return new ScissorsMoveSet();
+
+            default:
+            {
+                throw new Error("Invalid Input");
+            }
         }
     }
 
